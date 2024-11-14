@@ -1,0 +1,33 @@
+  @if($state().loading){
+    <div
+    class="flex items-center justify-center min-h-screen bg-gray-50 bg-opacity-80"
+    >
+    <div
+    class="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full
+    animate-spin"
+    ></div>
+    </div>
+ }@else if($state().error){
+     <div class="flex items-center justify-center min-h-screen bg-gray-50">
+    <div
+    class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg
+    shadow-md max-w-lg"
+    >
+    <strong class="font-semibold">Error:</strong> $state().error
+    </div>
+    </div>
+ }@else{
+
+    <ul
+    class="max-w-md mx-auto bg-white rounded-lg shadow-md divide-y divide-gray-200"
+    >
+    @for(item of $state().data; track item.name){
+        <li
+        class="px-6 py-4 cursor-pointer hover:bg-gray-100 transition-colors"
+        (click)="listRecipes(item.name)">
+        {{item.name}}
+        </li>
+    }
+    </ul>
+ }
+    

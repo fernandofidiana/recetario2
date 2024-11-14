@@ -1,0 +1,15 @@
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.animate-pulse {
+    background: linear-gradient(to right, #d1d5db, #9ca3af, #d1d5db);
+    background-size: 2000px 100%;
+    animation: shimmer 1.5s infinite;
+}
